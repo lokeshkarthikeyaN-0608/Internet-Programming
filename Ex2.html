@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            p {
+                font-weight: bolder;
+            }
+            #cart {
+                width: 250px;
+                min-height: 150px;
+                border: 2px dashed navajowhite;
+                border-radius: 10px;
+                background-color: darkorange;
+                padding: 15px;
+                margin-top: 10px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                transition: background-color 0.2s ease;
+            }
+            #cart-item {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 8px;
+                margin-bottom: 8px;
+                background-color: whitesmoke;
+                border: 1px solid  white;
+                border-radius: 6px;
+            }
+
+            #cart-item img {
+                width: 40px;
+                height: auto;
+                border-radius: 4px;
+            }
+        </style>
+        <title>
+           A to Z.com
+        </title>
+        <body>
+            <h1 style="text-align: center;background-color: coral;">
+                ONLINE SHOPPING STORE
+            </h1>
+            <img src="Imagemap.png" alt="Imagemap" usemap="#Workmap"width="100%">
+            <map name ="#Workmap">
+                <area shape="rect" coords="0,4,212,256" href="#section-mobile" alt="Mobile Section">
+                <area shape="rect" coords="216,5,451,257" href="#section-earphones" alt="Gadgets Section">
+                <area shape="rect" coords="448,10,717,257" href="#section-shirt" alt="Clothing Section">
+            </map>
+            <br>
+            <hr>
+            <br>
+            <h1 style="text-align: center;background-color: coral;">
+                Mobile Phones
+            </h1>
+            <div id="section-mobile">
+        <h1>Mobile Phones</h1>
+        <div class="product-gallery">
+            <img src="Phone.jpg" alt="Mobile">
+            <img src="Phone.jpg" alt="Mobile">
+            <img src="Phone.jpg" alt="Mobile">
+            <img src="Phone.jpg" alt="Mobile">
+            <img src="Phone.jpg" alt="Mobile">
+            <img src="Phone.jpg" alt="Mobile">
+            <img src="Phone.jpg" alt="Mobile">
+        </div>
+    </div>
+           <hr>
+    <div id="section-earphones">
+        <h1>Gadgets</h1>
+        <div class="product-gallery">
+            <img src="Headphone.jpg" alt="Bluetooth">
+            <img src="Headphone.jpg" alt="Bluetooth">
+            <img src="Headphone.jpg" alt="Bluetooth">
+        </div>
+    </div>
+    <hr>
+    <div id="section-shirt">
+        <h1>Clothing</h1>
+        <div class="product-gallery">
+            <img src="Pant.jpg" alt="Pant">
+            <img src="Pant.jpg" alt="Pant">
+            <img src="Pant.jpg" alt="Pant">
+        </div>
+    </div>
+    <hr>
+    <h2>Product Video</h2>
+    <video controls autoplay muted loop playsinline style="width: auto;">
+        <source src="Bike.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+    </video>
+    <hr>
+          <hr>
+    <h2>Products</h2>
+    <table border="1" cellpadding="10" style="border-collapse: collapse;">
+        <thead>
+            <tr style="background-color: #f2f2f2;">
+                <th>Product</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="drag-mobile" data-name="Mobile Phone" draggable="true" ondragstart="drag(event)">
+                <td><img src="Phone.jpg" alt="Mobile Phone" width="120"></td>
+                <td>₹30000</td>
+            </tr>
+            <tr id="drag-gadget" data-name="Headphones" draggable="true" ondragstart="drag(event)">
+                <td><img src="Headphone.jpg" alt="Headphones" width="120"></td>
+                <td>₹1500</td>
+            </tr>
+            <tr id="drag-shirt" data-name="Pants" draggable="true" ondragstart="drag(event)">
+                <td><img src="Pant.jpg" alt="Pants" width="120"></td>
+                <td>₹5000</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Drag and Drop Cart</h2>
+    <div id="cart" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <p id="placeholder-text" style="color: #888;border-color: brown;width: 100px height: 100px;">
+            Drop Product Here
+        </p>
+    </div>
+    <script>
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        function drag(event) {
+            event.dataTransfer.setData("text", event.currentTarget.id);
+        }
+        function drop(event) {
+            event.preventDefault();
+            const placeholder = document.getElementById("placeholder-text");
+            if (placeholder) {
+                placeholder.remove();
+            }
+            const draggedId = event.dataTransfer.getData("text");
+            const draggedRow = document.getElementById(draggedId);
+
+            if (draggedRow) {
+                const imgSrc = draggedRow.querySelector("img").src;
+                const price = draggedRow.cells[1].innerText;
+                const productName = draggedRow.getAttribute("data-name");
+                const cartItem = document.createElement("div");
+                cartItem.className = "cart-item";
+                cartItem.innerHTML = `
+                    <img src="${imgSrc}" alt="${productName}">
+                    <div>
+                        <strong>${productName}</strong><br>
+                        <span>${price}</span>
+                    </div>
+                `;
+                document.getElementById("cart").appendChild(cartItem);
+            }
+        }
+    </script>
+    </head>
+</html>

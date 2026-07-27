@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+           A to Z.com
+        </title>
+        <style>
+            p {
+                font-weight: bolder;
+            }
+            #cart {
+                width: 250px;
+                min-height: 150px;
+                border: 2px dashed navajowhite;
+                border-radius: 10px;
+                background-color: darkorange;
+                padding: 15px;
+                margin-top: 10px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                transition: background-color 0.2s ease;
+            }
+            #cart-item {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 8px;
+                margin-bottom: 8px;
+                background-color: whitesmoke;
+                border: 1px solid  white;
+                border-radius: 6px;
+            }
+
+            #cart-item img {
+                width: 40px;
+                height: auto;
+                border-radius: 4px;
+            }
+        </style>
+        <link rel="stylesheet" href="style3.css">
+        <body>
+            <h1 style="text-align: center;background-color: coral;">
+                ONLINE SHOPPING STORE
+            </h1>
+            <img src="Imagemap.png" alt="Imagemap" usemap="#Workmap"width="100%">
+            <map name ="#Workmap">
+                <area shape="rect" coords="0,4,212,256" href="#section-mobile" alt="Mobile Section">
+                <area shape="rect" coords="216,5,451,257" href="#section-earphones" alt="Gadgets Section">
+                <area shape="rect" coords="448,10,717,257" href="#section-shirt" alt="Clothing Section">
+            </map>
+            <br>
+            <hr>
+            <br>
+            <h1 style="background-color: coral;">
+                Mobile Phones
+            </h1>
+            <br>
+            <p style="font-family: Verdana, Geneva, Tahoma, sans-serif; background-color: cadetblue;">
+                The Nothing Phone (3a) features a 6.77-inch 120Hz AMOLED display, a Snapdragon 7s Gen 3 processor, and a 50MP triple camera system. It launched on March 4, 2025, with a starting price of around Rs. 29,999 for the 8GB/128GB model.
+            </p>
+            <div id="section-mobile">
+        <h1>Mobile Phones</h1>
+        <div class="product-gallery">
+            <img class="hov" src="Phone.jpg" alt="Mobile">
+            <img class="hov" src="Phone.jpg" alt="Mobile">
+            <img class="hov" src="Phone.jpg" alt="Mobile">
+            <img class="hov" src="Phone.jpg" alt="Mobile">
+            <img class="hov" src="Phone.jpg" alt="Mobile">
+            <img class="hov" src="Phone.jpg" alt="Mobile">
+            <img class="hov" src="Phone.jpg" alt="Mobile">
+        </div>
+    </div>
+           <hr>
+    <div id="section-earphones">
+        <h1>Gadgets</h1>
+        <p class="go">
+            The GOBOULT Mustang Dyno are budget-friendly wireless earbuds featuring a 60-hour total playback time, Bluetooth 5.4, and 13mm bass drivers. Created under an official Mustang collaboration, they retail for around ₹1,299 in India.
+        </p>
+        <div class="product-gallery">
+            <img class="hov" src="Headphone.jpg" alt="Bluetooth">
+            <img class="hov" src="Headphone.jpg" alt="Bluetooth">
+            <img class="hov" src="Headphone.jpg" alt="Bluetooth">
+        </div>
+    </div>
+    <hr>
+    <div id="section-shirt">
+        <h1>Clothing</h1>
+        <p id="pa">
+            Levi's jeans were invented in 1873 by Levi Strauss and Jacob Davis, who created the first copper-riveted work pants. Headquartered in San Francisco, Levi Strauss & Co. is a top global apparel brand famous for iconic models like the 501, 511, and 512.
+        </p>
+        <div class="product-gallery">
+            <img class="hov" src="Pant.jpg" alt="Pant">
+           <img class="hov" src="Pant.jpg" alt="Pant">
+           <img class="hov" src="Pant.jpg" alt="Pant">
+        </div>
+    </div>
+    <hr>
+    <h2>Product Video</h2>
+    <video controls autoplay muted loop playsinline style="width: auto;">
+        <source src="Bike.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+    </video>
+    <hr>
+          <hr>
+    <h2>Products</h2>
+    <table border="1" cellpadding="10" style="border-collapse: collapse;">
+        <thead>
+            <tr style="background-color: #f2f2f2;">
+                <th>Product</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="drag-mobile" data-name="Mobile Phone" draggable="true" ondragstart="drag(event)">
+                <td><img src="Phone.jpg" alt="Mobile Phone" width="120"></td>
+                <td>₹29,999</td>
+            </tr>
+            <tr id="drag-gadget" data-name="Headphones" draggable="true" ondragstart="drag(event)">
+                <td><img src="Headphone.jpg" alt="Headphones" width="120"></td>
+                <td>₹1,299</td>
+            </tr>
+            <tr id="drag-shirt" data-name="Pants" draggable="true" ondragstart="drag(event)">
+                <td><img src="Pant.jpg" alt="Pants" width="120"></td>
+                <td>₹5000</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Drag and Drop Cart</h2>
+    <div id="cart" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <p id="placeholder-text" style="color: #888;border-color: brown;width: 100px height: 100px;">
+            Drop Product Here
+        </p>
+    </div>
+
+    <script>
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        function drag(event) {
+            event.dataTransfer.setData("text", event.currentTarget.id);
+        }
+        function drop(event) {
+            event.preventDefault();
+            const placeholder = document.getElementById("placeholder-text");
+            if (placeholder) {
+                placeholder.remove();
+            }
+            const draggedId = event.dataTransfer.getData("text");
+            const draggedRow = document.getElementById(draggedId);
+
+            if (draggedRow) {
+                const imgSrc = draggedRow.querySelector("img").src;
+                const price = draggedRow.cells[1].innerText;
+                const productName = draggedRow.getAttribute("data-name");
+                const cartItem = document.createElement("div");
+                cartItem.className = "cart-item";
+                cartItem.innerHTML = `
+                    <img src="${imgSrc}" alt="${productName}">
+                    <div>
+                        <strong>${productName}</strong><br>
+                        <span>${price}</span>
+                    </div>
+                    `;
+                document.getElementById("cart").appendChild(cartItem);
+            }
+        }
+    </script>
+    </head>
+</html>
