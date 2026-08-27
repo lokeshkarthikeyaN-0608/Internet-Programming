@@ -1,0 +1,135 @@
+<!DOCTYPE html> 
+
+<html> 
+
+<head> 
+
+    <title>www.Trillion Jobs.com</title> 
+
+    <link rel="stylesheet" href="style4.css"> 
+
+</head> 
+
+<body> 
+
+<div class="formsheet"> 
+
+    <h2>Job Seeker Registration</h2> 
+
+    <form id="registrationForm" novalidate> 
+
+        <div class="form"> 
+
+            <label for="firstName">First Name *</label> 
+
+            <input type="text" id="firstName" placeholder="Enter your First Name" required> 
+
+            <span class="error-message" id="firstNameError"></span> 
+
+        </div> 
+
+        <div class="form"> 
+
+            <label for="middleName">Middle Name</label> 
+
+            <input type="text" id="middleName" placeholder="Enter your Middle Name"> 
+
+            <span class="error-message" id="middleNameError"></span> 
+
+        </div> 
+
+        <div class="form"> 
+
+            <label for="lastName">Last Name *</label> 
+
+            <input type="text" id="lastName" placeholder="Enter your Last Name or Sir Name" required> 
+
+            <span class="error-message" id="lastNameError"></span> 
+
+        </div> 
+
+        <div class="form"> 
+
+            <label for="email">Email Address *</label> 
+
+            <input type="email" id="email" placeholder="loki2006@gmail.com" required> 
+
+            <span class="error-message" id="emailError"></span> 
+
+        </div> 
+
+        <div class="form"> 
+
+            <label for="password">Password *</label> 
+
+            <input type="password" id="password" placeholder="At least 6 characters" required> 
+
+            <span class="error-message" id="passwordError"></span> 
+
+        </div> 
+
+        <div class="form"> 
+
+            <label for="role">Role *</label> 
+
+            <select id="role" required> 
+
+                <option value="">Select your role of work...</option> 
+
+                <option value="HR">HR role</option> 
+
+                <option value="Tester">Tester role</option> 
+
+                <option value="TL">Team Leader role</option> 
+
+                <option value="Senior">Senior Software Developer role</option> 
+
+                <option value="PM">Product Manager role</option> 
+
+            </select> 
+
+            <span class="error-message" id="roleError"></span> 
+
+        </div> 
+
+        <div class="form"> 
+
+            <label for="experience">Experience Level *</label> 
+
+            <select id="experience" required> 
+
+                <option value="">Select your experience...</option> 
+
+                <option value="fresher">Fresher / Entry-Level</option> 
+
+                <option value="mid">Mid-Level (1-3 years)</option> 
+
+                <option value="senior">Senior (3+ years)</option> 
+
+            </select> 
+
+            <span class="error-message" id="experienceError"></span> 
+
+        </div> 
+
+        <div class="form"> 
+
+            <label for="resume">Upload Resume * (PDF or DOCX, Max 5MB)</label> 
+
+            <input type="file" id="resume" accept=".pdf,.doc,.docx"> 
+
+            <span class="error-message" id="resumeError"></span> 
+
+        </div> 
+
+        <button type="submit">Register Account</button> 
+
+    </form> 
+
+</div> 
+
+<script src="script.js"></script> 
+
+</body> 
+
+</html> 
