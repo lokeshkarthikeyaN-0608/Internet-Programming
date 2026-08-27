@@ -1,0 +1,195 @@
+:root { 
+
+    --primary-color: navy; 
+
+    --error-color: red; 
+
+    --success-color: green; 
+
+    --bg-color: white; 
+
+} 
+
+ 
+
+body { 
+
+    font-family: 'Times New Roman', Times, serif; 
+
+    background-image: url(back4.jpg); 
+
+    background-repeat: no-repeat; 
+
+    background-size: cover; 
+
+    margin: 0; 
+
+    padding: 20px; 
+
+    display: flex; 
+
+    justify-content: center; 
+
+    align-items: center; 
+
+    min-height: 90vh; 
+
+} 
+
+ 
+
+.formsheet { 
+
+    background: rgb(189, 96, 96); 
+
+    padding: 10px; 
+
+    border-radius: 8px; 
+
+    box-shadow: rgba(0, 102, 204, 0.2) 10px,20px,30px; 
+
+    width: 100%; 
+
+    max-width: 500px; 
+
+} 
+
+ 
+
+h2 { 
+
+    margin-top: 0; 
+
+    color: darkred; 
+
+    text-align: center; 
+
+    margin-bottom: 25px; 
+
+} 
+
+ 
+
+.form { 
+
+    margin-bottom: 20px; 
+
+} 
+
+ 
+
+label { 
+
+    display: block; 
+
+    margin-bottom: 6px; 
+
+    font-weight: 600; 
+
+    color: darkmagenta; 
+
+    font-size: 14px; 
+
+} 
+
+ 
+
+input[type="text"], 
+
+input[type="email"], 
+
+input[type="password"], 
+
+input[type="file"], 
+
+select { 
+
+    width: 100%; 
+
+    padding: 10px; 
+
+    border: 1px solid wheat; 
+
+    border-radius: 4px; 
+
+    box-sizing: border-box; 
+
+    font-size: 14px; 
+
+} 
+
+ 
+
+input:focus, select:focus { 
+
+    outline: none; 
+
+    border-color: var(--primary-color); 
+
+    box-shadow: 0 0 5px rgba(0, 102, 204, 0.2); 
+
+} 
+
+ 
+
+.error-message { 
+
+    color: var(--error-color); 
+
+    font-size: 12px; 
+
+    margin-top: 5px; 
+
+    display: block; 
+
+} 
+
+ 
+
+input.invalid, select.invalid { 
+
+    border-color: var(--error-color); 
+
+} 
+
+ 
+
+input.valid, select.valid { 
+
+    border-color: var(--success-color); 
+
+} 
+
+ 
+
+button[type="submit"] { 
+
+    background-color: var(--primary-color); 
+
+    color: white; 
+
+    border: none; 
+
+    padding: 12px; 
+
+    width: 100%; 
+
+    border-radius: 4px; 
+
+    font-size: 16px; 
+
+    font-weight: bold; 
+
+    cursor: pointer; 
+
+    transition: background-color 0.2s; 
+
+} 
+
+ 
+
+button[type="submit"]:hover { 
+
+    background-color: darkblue; 
+
+} 
