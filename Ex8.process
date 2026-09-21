@@ -1,0 +1,23 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Details</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Registration Details</h2>
+        <div class="details">
+            <p><span class="label">User Name:</span><span class="value"><%= request.getParameter("username") %></span></p>
+            <p><span class="label">Password:</span><span class="value"><%= request.getParameter("password") %></span></p>
+            <p><span class="label">Name:</span><span class="value"><%= request.getParameter("name") %></span></p>
+            <p><span class="label">Credit Card Number:</span><span class="value"><%= request.getParameter("card") %></span></p>
+            <p><span class="label">Email:</span><span class="value"><%= request.getParameter("email") %></span></p>
+            <p><span class="label">Phone Number:</span><span class="value"><%= request.getParameter("phone") %></span></p>
+        </div>
+        <div class="back">
+            <a href="index.jsp">Back to Registration</a>
+        </div>
+    </div>
+</body>
+</html>
