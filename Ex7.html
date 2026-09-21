@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Session Tracking Experiment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background: #eef2f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 800px;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,.15);
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 30px;
+            color: #222;
+        }
+        .methods {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            justify-items: center;
+        }
+        .method {
+            width: 300px;
+            height: 140px;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            background: #f8f8f8;
+            text-decoration: none;
+            color: #222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: .3s;
+        }
+        .method:hover {
+            background: #007bff;
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,.2);
+        }
+        .method h2 {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Session Tracking Experiment</h1>
+        <div class="methods">
+            <a class="method" href="CookieServlet"><h2>Cookie Tracking</h2></a>
+            <a class="method" href="URLRewritingServlet"><h2>URL Rewriting</h2></a>
+            <a class="method" href="HiddenFormServlet"><h2>Hidden Form Field</h2></a>
+            <a class="method" href="HttpSessionServlet"><h2>HttpSession</h2></a>
+        </div>
+    </div>
+</body>
+</html>
