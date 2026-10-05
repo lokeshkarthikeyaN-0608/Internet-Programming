@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<books>
+
+    <book>
+        <id>101</id>
+        <name>Internet Programming</name>
+        <price>550</price>
+    </book>
+
+    <book>
+        <id>102</id>
+        <name>Deep Learning</name>
+        <price>450</price>
+    </book>
+
+    <book>
+        <id>103</id>
+        <name>Computer Networks</name>
+        <price>600</price>
+    </book>
+
+    <book>
+        <id>104</id>
+        <name>Digital Marketting</name>
+        <price>400</price>
+    </book>
+
+</books>
